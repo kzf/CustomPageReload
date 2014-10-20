@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "CustomPageReload",
+
+  "version": "0.1",
+
+  "description": "Automatically reload pages using custom rules.",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "settings.html"
+  },
+
+  "background": {
+    "scripts": ["event.js"]
+  },
+  
+  "permissions": [
+    "storage"
+  ],
+
+  "content_scripts" : [
+    {
+      "matches" : [ 
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : [ "reloader.js" ],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ]
+}
