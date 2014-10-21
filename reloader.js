@@ -1,21 +1,31 @@
+function redirectTo(URL, delay) {
+    setTimeout(function() {
+        window.location.href = URL;
+      }, delay * 1000)
+}
+
 function beginReloading(params) {
-    if (!params.enabled) return;
-
+console.log(params);
+    if (!params.enabled || !params.reloadrules) return;
+    
     var loc = window.location.href;
-    var pattern = new RegExp(params.urlfrom, 'gi');
-    //All%20work%20is/gi;
+    
+    for (var i = 0; i < params.reloadrules.length; i++) {
+        var rules = params.reloadrules[i];
+        console.log(rules);
+        var pattern = new RegExp(rules.urlfrom, 'gi');
+        //All%20work%20is/gi;
 
-    matches = loc.match(pattern);
-    if (matches) {
-      chrome.extension.sendMessage({}, function(response) {});
-      setTimeout(function() {
-        window.location.href = params.urlto;
-      }, params.delay * 1000)
+        matches = loc.match(pattern);
+        if (matches) {
+          chrome.extension.sendMessage({}, function(response) {});
+          redirectTo(rules.urlto, rules.delay);
+        }
     }
 
 }
 
-chrome.storage.sync.get(['urlfrom', 'urlto', 'delay', 'enabled'], function(items) {
+chrome.storage.sync.get(['reloadrules', 'enabled'], function(items) {
     beginReloading(items);
     console.log('started reloading');
 });

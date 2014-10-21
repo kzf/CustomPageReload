@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
 	<head>
+        <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="jquery-1.11.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
 	</head>
 	<body>
 		<div id="header" class="pagebody">
@@ -13,24 +15,41 @@
             </div>
         </div>
         <div id="settings" class="pagebody">
-            <div class="reloadeditor">
-                <form>
-                    <label for="urlfrom">When I visit...</label>
-                    <input type="text" id="urlfrom" placeholder="example.com">
-                    <label for="urlfrom">Redirect to...</label>
-                    <input type="text" id="urlto" placeholder="example.com.au">
-                    <label class="wrap" for="urlfrom">after delaying for
-                    <input class="number" type="text" id="delay">
-                    seconds
-                    </label>
-                    <input type="submit" value="Save" id="submit">
-                    <span id="saving"></span>
-                </form>
-            </div>
+           
+        </div>
+        <div id="reloadeditor">
+            <form>
+                <label for="urlfrom">When I visit...</label>
+                <input type="text" id="urlfrom" placeholder="example.com">
+                <label for="urlfrom">Redirect to...</label>
+                <input type="text" id="urlto" placeholder="example.com.au">
+                <label class="wrap" for="urlfrom">after delaying for
+                <input class="number" type="text" id="delay">
+                seconds
+                </label>
+                <input type="submit" value="Save" id="submit">
+            </form>
+            <div id="saving"></div>
         </div>
         <div id="footer" class="pagebody">
             <a href="http://github.com/kzf/CustomPageReload">Fork me on GitHub</a>
         </div>
+        <script id="reloadrules-template" type="text/x-template">
+            <div class="reloadrule" data-ruleid="{{ruleid}}">
+                <div class="reloadbuttons">
+                    <div class="editrule" data-ruleid="{{ruleid}}">Edit</div>
+                    <div class="pauserule">Pause</div>
+                </div>
+                <div class="reloadinfo">
+                    <div class="urlfrom">{{urlfrom}}</div>
+                    <div class="urltogo">
+                        <span class="ui-icon ui-icon-arrowreturn-1-e"></span>
+                        <span class="delay">{{delay}}</span>
+                        <span class="urlto">{{urlto}}</span>
+                    </div>
+                </div>
+            </div>
+        </script>
         <script src="popup.js"></script>
 	</body>
 </html>

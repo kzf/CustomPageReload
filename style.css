@@ -5,7 +5,7 @@ body {
 }
 
 input#urlfrom {
-    text-align: center;
+    /* text-align: center; */
     padding: 0px;
     margin: 0;
 }
@@ -54,7 +54,6 @@ input.number {
 }
 
 #header {
-    background-color: red;
     vertical-align: middle;
     position: relative;
 }
@@ -93,6 +92,65 @@ a {
     transition: color 300ms;
 }
 
+#saving {
+    width:250px;
+    margin-top:5px;
+    border-radius:2px;
+    padding:5px 0px;
+    background-color: blue;
+}
+
 a:hover {
     color: black;
+}
+
+form {
+    border-radius:2px;
+    background-color: #96AB98;
+    padding: 5px 0px;
+}
+
+.reloadinfo, .reloadbuttons {
+    display: inline-block;
+}
+
+.reloadrule {
+    
+    border: 2px green solid;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.reloadbuttons {
+    float: right;
+    width: 15%;
+}
+
+.ui-icon {
+    display: inline-block;
+}
+
+.ui-icon, .delay, .urlto {
+    vertical-align: middle;
+}
+
+.delay:after {
+    content:'s';
+    color: black;
+}
+
+.delay {
+    color: red;
+}
+
+.pagebody .reloadrule:nth-child(n+1),
+#reloadeditor {
+    margin-top: 5px;
+}
+
+.urlto, .urlfrom {
+    width: 150px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
