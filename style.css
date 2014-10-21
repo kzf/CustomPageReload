@@ -1,0 +1,48 @@
+
+body {
+    text-align: center;
+    padding: 0px;
+    margin: 0;
+}
+
+#header {
+    background-color: red;
+}
+
+#header {
+    border-radius: 2px 2px 0px 0px / 2px;
+}
+#footer {
+    /*border-radius: 0px 0px 5px 5px / 5px;*/
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+}
+#footer:after {
+    content:"";
+    background-color: lightgrey;
+    position:absolute;
+    top: 0;
+    left: 10%;
+    height: 2px;
+    width: 80%;
+}
+
+.pagebody {
+    padding: 5px;
+    width: 250px;
+}
+
+a {
+    color: red;
+    text-decoration: underline;
+    -webkit-transition: color 300ms;
+    -moz-transition: color 300ms;
+    -ms-transition: color 300ms;
+    -o-transition: color 300ms;
+    transition: color 300ms;
+}
+
+a:hover {
+    color: black;
+}

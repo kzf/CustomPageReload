@@ -1,9 +1,25 @@
 <!doctype html>
 <html>
 	<head>
-
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-1.11.1.min.js"></script>
+        
 	</head>
 	<body>
-		Settings!
+		<div id="header" class="pagebody">
+            Custom Page Reloader
+        </div>
+        <div id="settings" class="pagebody">
+            <form>
+                When I visit <input type="text" name="urlfrom" id="urlfrom"><br>
+                Load <input type="text" name="urlto" id="urlto"><br>
+                After <input type="text" name="delay" id="delay"> seconds<br>
+                <input type="submit" value="Save" id="submit"><span id="saving"></span>
+            </form>
+        </div>
+        <div id="footer" class="pagebody">
+            <a href="http://github.com/kzf/CustomPageReload">Fork me on GitHub</a>
+        </div>
+        <script src="popup.js"></script>
 	</body>
 </html>
