@@ -1,4 +1,5 @@
 function beginReloading(params) {
+    if (!params.enabled) return;
 
     var loc = window.location.href;
     var pattern = new RegExp(params.urlfrom, 'gi');
@@ -6,7 +7,7 @@ function beginReloading(params) {
 
     matches = loc.match(pattern);
     if (matches) {
-      chrome.extension.sendRequest({}, function(response) {});
+      chrome.extension.sendMessage({}, function(response) {});
       setTimeout(function() {
         window.location.href = params.urlto;
       }, params.delay * 1000)
@@ -14,7 +15,7 @@ function beginReloading(params) {
 
 }
 
-chrome.storage.sync.get(['urlfrom', 'urlto', 'delay'], function(items) {
+chrome.storage.sync.get(['urlfrom', 'urlto', 'delay', 'enabled'], function(items) {
     beginReloading(items);
     console.log('started reloading');
 });

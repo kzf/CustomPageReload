@@ -3,19 +3,30 @@
 	<head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="jquery-1.11.1.min.js"></script>
-        
 	</head>
 	<body>
 		<div id="header" class="pagebody">
-            Custom Page Reloader
+            <img src="icon.png">
+            <span>Custom Page Reloader</span>
+            <div id="onoff">
+                Disable
+            </div>
         </div>
         <div id="settings" class="pagebody">
-            <form>
-                When I visit <input type="text" name="urlfrom" id="urlfrom"><br>
-                Load <input type="text" name="urlto" id="urlto"><br>
-                After <input type="text" name="delay" id="delay"> seconds<br>
-                <input type="submit" value="Save" id="submit"><span id="saving"></span>
-            </form>
+            <div class="reloadeditor">
+                <form>
+                    <label for="urlfrom">When I visit...</label>
+                    <input type="text" id="urlfrom" placeholder="example.com">
+                    <label for="urlfrom">Redirect to...</label>
+                    <input type="text" id="urlto" placeholder="example.com.au">
+                    <label class="wrap" for="urlfrom">after delaying for
+                    <input class="number" type="text" id="delay">
+                    seconds
+                    </label>
+                    <input type="submit" value="Save" id="submit">
+                    <span id="saving"></span>
+                </form>
+            </div>
         </div>
         <div id="footer" class="pagebody">
             <a href="http://github.com/kzf/CustomPageReload">Fork me on GitHub</a>

@@ -1,12 +1,62 @@
 
 body {
+    padding: 0px;
+    margin: 0px;
+}
+
+input#urlfrom {
     text-align: center;
     padding: 0px;
     margin: 0;
 }
 
+#onoff {
+    position: absolute;
+    float: right;
+    right:10px;
+    top:2px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+    
+    text-align: right;
+}
+
+label.wrap {
+    display: inline-block;
+    
+    width: 198px;
+    padding-right: 2px;
+}
+
+#header span, #header img {
+    height: 19px;
+    vertical-align: middle;
+}
+
+#submit {
+    width: 46px;
+
+    display: inline-block;
+}
+
+input {
+    width: 150px;
+    
+    display: inline-block;
+}
+
+input.number {
+    width: 50px;
+    
+}
+
 #header {
     background-color: red;
+    vertical-align: middle;
+    position: relative;
 }
 
 #header {

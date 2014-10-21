@@ -1,6 +1,6 @@
-function onRequest(request, sender, sendResponse) {
+function onMessage(request, sender, sendResponse) {
   chrome.browserAction.setBadgeText({text: "!"});
   sendResponse({});
 };
 
-chrome.extension.onRequest.addListener(onRequest);
+chrome.extension.onMessage.addListener(onMessage);
